@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discord bot for Tenchou Fansubs.">
+  <title>Lolicon</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Lolicon</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">Add to server</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav-->
+
+  <header class="jumbotron">
+    <div class="container">
+
+      <div id="lolicon" class="col-md-6 col-md-offset-3">
+        <img id="avatar" class="img-rounded" src="img/yazukure_nonon-upscaled.png" alt="Makise Kurisu" title="KURISU-TINA!">
+        <form>
+          <button id="add-lolicon" class="btn btn-lg" type="button" data-toggle="modal" data-target="#permissions-modal" onclick="return false;">
+            Add Lolicon to your server
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </header>
+
+  <!--
+    Permissions
+  -->
+  <div class="modal fade" id="permissions-modal" tabindex="-1" role="dialog" aria-labelledby="permissions-modal-label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="permissions-modal-label">Permissions</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            Choose the privileges you want to give to Lolicon.
+          </p>
+
+          <form>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-CREATE_INSTANT_INVITE" value="0x00000001">
+                Create instant invites
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-KICK_MEMBERS" value="0x00000002">
+                Kick members
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-BAN_MEMBERS" value="0x00000004">
+                Ban members
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-ADMINISTRATOR" value="0x00000008">
+                Administrator (i.e. total control)
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-MANAGE_CHANNELS" value="0x00000010">
+                Manage and edit channels
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-MANAGE_GUILD" value="0x00000020">
+                Manage and edit guild
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-READ_MESSAGES" value="0x00000400">
+                Read messages
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-SEND_MESSAGES" value="0x00000800">
+                Send messages
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-SEND_TTS_MESSAGES" value="0x00001000">
+                Send <acronym title="Text to speech">TTS</acronym> messages
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-MANAGE_MESSAGES" value="0x00002000">
+                Manage messages (i.e. delete messages)
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-EMBED_LINKS" value="0x00004000">
+                Embed links
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-ATTACH_FILES" value="0x00008000">
+                Attach files
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-READ_MESSAGE_HISTORY" value="0x00010000">
+                Read message history
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-MENTION_EVERYONE" value="0x00020000">
+                Mention @everyone
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-CONNECT" value="0x00100000">
+                Join voice channel
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-SPEAK" value="0x00200000">
+                Send audio to voice channel
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-MUTE_MEMBERS" value="0x00400000">
+                Mute members in a voice channel
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-DEAFEN_MEMBERS" value="0x00800000">
+                Deafen members in a voice channel
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-MOVE_MEMBERS" value="0x01000000">
+                Move members to a different voice channel
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-USE_VAD" value="0x02000000">
+                Use voice-activity-detection in a voice channel
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-CHANGE_NICKNAME" value="0x04000000">
+                Change its own nickname (why)
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-MANAGE_NICKNAMES" value="0x08000000">
+                Change others' nicknames <!-- how is that even possible -->
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="permission-MANAGE_ROLES" value="0x10000000">
+                Manage and edit roles
+              </label>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="do-add">Add to server</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+    window.LOLICON_CLIENT_ID = '173514316727844864';
+  </script>
+
+  <script>
+    (function() {
+      var button = document.getElementById('do-add');
+      if (!button) {
+        throw new Error('"Add to server" action button not found');
+      }
+
+      button.addEventListener('click', function() {
+        var permissionsInt = Array.prototype.slice.call(
+          document.querySelectorAll('#permissions-modal input[type="checkbox"]')
+        ).filter(function(checkbox) {
+          return checkbox.checked;
+        }).map(function(checkbox) {
+          return parseInt(checkbox.value, 16);
+        }).reduce(function(a, b) {
+          return a|b;
+        }, 0);
+        
+        var addBotUrl = 'https://discordapp.com/oauth2/authorize?client_id='+window.LOLICON_CLIENT_ID+'&scope=bot&permissions=' + permissionsInt;
+
+        return window.open(addBotUrl, '_blank');
+      });
+    })();
+  </script>
+</body>
+</html>

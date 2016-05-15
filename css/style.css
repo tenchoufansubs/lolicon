@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Regular.ttf");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Regular.ttf");
+  font-weight: 300;
+}
+
+body {
+  font-family: 'Noto Sans';
+}
+
+body > nav.navbar.navbar-default {
+  font-family: 'Raleway';
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 0;
+}
+body > nav.navbar.navbar-default a,
+body > nav.navbar.navbar-default a:link,
+body > nav.navbar.navbar-default a:visited,
+body > nav.navbar.navbar-default a:hover,
+body > nav.navbar.navbar-default a:active,
+body > nav.navbar.navbar-default li:hover a,
+body > nav.navbar.navbar-default li:hover a:link,
+body > nav.navbar.navbar-default li:hover a:visited,
+body > nav.navbar.navbar-default li:hover a:hover,
+body > nav.navbar.navbar-default li:hover a:active
+{
+  color: #fff;
+}
+
+/*
+ * The big thing at the top.
+ */
+.jumbotron {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+
+  background-color: #924a45;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#lolicon {
+  margin-top: 50px;
+  font-family: 'Raleway';
+  text-align: center;
+  color: #fff;
+}
+#add-lolicon {
+  background: #e5746c;
+  color: #fff;
+  font-size: 20px;
+  margin-top: 30px;
+}
+#add-lolicon:hover {
+  background: #e5746c;
+}
+
+#avatar {
+  max-width: 400px;
+  height: auto;
+  border: 2px solid #fff;
+}
